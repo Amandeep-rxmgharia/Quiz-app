@@ -87,7 +87,6 @@ export default function Test() {
   useEffect(() => {
     setData(data[ques]);
   }, [ques]);
-
   return (
     <main className="bg-[#CCE2C2]">
       <section className="mx-auto h-screen max-w-[900px] p-4">
@@ -103,7 +102,7 @@ export default function Test() {
         <div className="flex justify-between text-white">
           <div className="inline-block rounded-sm bg-[#197e1edd] p-1 text-end text-xl font-semibold">
             <Link
-              to={ques + 1 == data.length ? "/result" : ""}
+              to={ques + 1 == data.length && userOption ? "/result" : ""}
               onClick={() => {
                 if (userOption) {
                   if (ques + 1 < data.length) {
